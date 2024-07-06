@@ -59,4 +59,16 @@ dependencies {
 
     //SplashScreen
     implementation ("androidx.core:core-splashscreen:1.0.1")
+
+    //dimension
+    implementation("com.intuit.sdp:sdp-android:1.1.0")
+    implementation("com.intuit.ssp:ssp-android:1.1.0")
+
+    //Navigation Component
+    val nav_version = "2.7.7"
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
+    //Glide
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
 }

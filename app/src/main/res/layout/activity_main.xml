@@ -6,16 +6,61 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-    <TextView
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/hostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Main Activity"/>
+        app:defaultNavHost="true"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_above="@id/bottomNavigation"
+        app:navGraph="@navigation/bottom_nav" />
 
-    <TextView
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Main Activity"/>
-
+        android:layout_height="@dimen/_60sdp"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_menu"
+        app:itemRippleColor="@color/app_color"
+        android:scrollIndicators="left"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/main"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".MainActivity">-->
+
+<!--    <androidx.fragment.app.FragmentContainerView-->
+<!--        android:id="@+id/hostFragment"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:defaultNavHost="true"-->
+<!--        android:name="androidx.navigation.fragment.NavHostFragment"-->
+<!--        android:layout_above="@id/bottomNavigation"-->
+<!--        app:navGraph="@navigation/bottom_nav" />-->
+
+
+<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--        android:id="@+id/bottomNavigation"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="@dimen/_60sdp"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        app:menu="@menu/bottom_menu"-->
+<!--        app:itemRippleColor="@color/app_color"-->
+<!--        android:scrollIndicators="left"/>-->
+
+<!--</RelativeLayout>-->
+
