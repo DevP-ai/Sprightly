@@ -1,26 +1,26 @@
-package com.developer.android.dev.technologia.androidapp.sprightly.presentation.category
+package com.developer.android.dev.technologia.androidapp.sprightly.presentation.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.developer.android.dev.technologia.androidapp.sprightly.databinding.CategoryDesignLayoutBinding
+import com.developer.android.dev.technologia.androidapp.sprightly.databinding.HomeCategoryDesignBinding
 import com.developer.android.dev.technologia.androidapp.sprightly.domain.model.Category
 
-class CategoryAdapter :
-    ListAdapter<Category, CategoryAdapter.CategoryViewHolder>(CategoryDiffUtil()) {
+class HomeCategoryAdapter :
+    ListAdapter<Category, HomeCategoryAdapter.HomeCategoryViewHolder>(CategoryDiffUtil()) {
 
-    inner class CategoryViewHolder(val binding: CategoryDesignLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class HomeCategoryViewHolder(val binding: HomeCategoryDesignBinding) : RecyclerView.ViewHolder(binding.root) {
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
-        return CategoryViewHolder(CategoryDesignLayoutBinding.inflate(LayoutInflater.from(parent.context),parent,false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeCategoryViewHolder {
+        return HomeCategoryViewHolder(HomeCategoryDesignBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
 
-    override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: HomeCategoryViewHolder, position: Int) {
         val category = getItem(position)
         holder.binding.categoryName.text= category.title
         holder.binding.categoryImage.setImageResource(category.image)
